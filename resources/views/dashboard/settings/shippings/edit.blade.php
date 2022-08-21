@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 @section('content')
     <div class="app-content content">
@@ -7,11 +8,11 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="">{{__('admin/index.Dashboard')}} </a>
                                 </li>
 
                                 </li>
-                                <li class="breadcrumb-item active">وسائل التوصيل
+                                <li class="breadcrumb-item active"> {{__('admin/index.Shipping Method')}}
                                 </li>
                             </ol>
                         </div>
@@ -25,7 +26,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> تعديل  وسيلة التوصيل </h4>
+                                    <h4 class="card-title" id="basic-layout-form">{{__('admin/index.Shipping Method')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -37,11 +38,12 @@
                                         </ul>
                                     </div>
                                 </div>
-
+                                @include('dashboard.includes.alerts.success')
+                                @include('dashboard.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form" action="{{route('update.shippings.methods',$shippingMethod -> id)}}"
-                                              method="PUT"
+                                              method="post"
                                               enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
@@ -51,133 +53,38 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم </label>
+                                                            <label for="projectinput1">{{__('admin/index.Name')}}</label>
                                                             <input type="text" value="{{$shippingMethod -> value}}" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   name="name">
-
-                                                            <span class="text-danger"></span>
-
+                                                                   name="value">
+                                                            @error("value")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput2"> أختر القسم </label>
-                                                            <select name="category_id" class="select2 form-control">
-                                                                <optgroup label="من فضلك أختر القسم ">
-
-                                                                            <option
-                                                                                value=""></option>
-
-
-                                                                </optgroup>
-                                                            </select>
-
-                                                            <span class="text-danger"> </span>
-
+                                                            <label for="projectinput1">{{__('admin/index.Cost')}}</label>
+                                                            <input type="number" value="{{$shippingMethod -> plain_value}}" id="plain_value"
+                                                                   class="form-control"
+                                                                   placeholder="  "
+                                                                   name="plain_value">
+                                                            @error("plain_value")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6 ">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1"> رقم الهاتف </label>
-                                                            <input type="text" id="mobile"
-                                                                   class="form-control"
-                                                                   placeholder="  " name="mobile"
-                                                              value="">
-
-
-                                                            <span class="text-danger"> </span>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 ">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1"> ألبريد الالكتروني </label>
-                                                            <input type="text" id="email"
-                                                                   class="form-control"
-                                                                   placeholder="  " name="email"
-                                                                   value="">
-
-
-                                                            <span class="text-danger"> </span>
-
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-
-                                                <div class="row">
-                                                    <div class="class col-12">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">كلمة المرور  </label>
-                                                            <input type="password" id="password"
-                                                                   class="form-control"
-                                                                   placeholder="  " name="password">
-
-
-                                                            <span class="text-danger"> </span>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-
-                                                <di class="row">
-                                                    <div class="col-md-6 ">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1"> العنوان  </label>
-                                                            <input type="text" id="pac-input"
-                                                                   class="form-control"
-                                                                   placeholder="  " name="address"
-                                                                   value=""
-                                                            >
-
-
-                                                            <span class="text-danger"> </span>
-
-                                                        </div>
-                                                    </div>
-
-                                                </di>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group mt-1">
-                                                            <input type="checkbox" value="1"
-                                                                   name="active"
-                                                                   id="switcheryColor4"
-                                                                   class="switchery" data-color="success"
-                                                                   checked />
-                                                            <label for="switcheryColor4"
-                                                                   class="card-title ml-1">الحالة </label>
-
-
-                                                            <span class="text-danger"> </span>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                             </div>
-
-
-                                            <div id="map" style="height: 500px;width: 1000px;"></div>
-
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i>{{__('admin/index.Cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> حفظ
+                                                    <i class="la la-check-square-o"></i> {{__('admin/index.Submit')}}
                                                 </button>
                                             </div>
                                         </form>

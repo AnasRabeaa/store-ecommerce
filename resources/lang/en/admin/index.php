@@ -1,5 +1,6 @@
 <?php
 return [
+    'Name' => 'Name',
     'Total Sales' => 'Total Sales',
     'Total Orders' => 'Total Orders',
     'Orders Quantity' => 'Orders Quantity',

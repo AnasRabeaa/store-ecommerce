@@ -106,7 +106,7 @@
                         <ul class="menu-content">
                             <li><a class="menu-item" href="{{route('edit.shippings.methods','free')}}"
                                    data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.Free Shipping')}}</a>
-                            <li><a class="menu-item" href="{{route('edit.shippings.methods','inner')}}"
+                            <li><a class="menu-item" href="{{route('edit.shippings.methods','local')}}"
                                    data-i18n="nav.templates.vert.compact_menu">{{__('admin/sidebar.Local Shipping')}}</a>
                             </li>
                             <li><a class="menu-item" href="{{route('edit.shippings.methods','outer')}}"
