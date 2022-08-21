@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminLoginRequest;
 
 
+
 class LoginController extends Controller
 {
+    //View Admin Login Form Function
     public function login(){
         return view('dashboard.auth.login');
     }
@@ -23,6 +25,7 @@ class LoginController extends Controller
     // }
 
 
+    //Checks If Admin In Exists In Database Function
     public function postLogin(AdminLoginRequest $request) {
 
         // validation
@@ -34,5 +37,14 @@ class LoginController extends Controller
         }
 
         return redirect()->back()->with(['error' => 'خطا في البيانات']);
+    }
+
+    //Admin Logout Function
+    public function logoutAdmin() {
+        //using logout trait
+        $adminLogout = auth()->guard('admin');
+        $adminLogout->logout();
+
+        return redirect()->route('admin.login');
     }
 }

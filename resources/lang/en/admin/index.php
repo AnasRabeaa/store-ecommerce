@@ -67,7 +67,7 @@ return [
     'Product Brand' => 'Product Brand',
     'Add Product' => 'Add Product',
     'Products' => 'Products',
-    '' => '',
+    'Touch Wood' => 'Touch Wood',
     '' => '',
     '' => '',
     '' => '',
