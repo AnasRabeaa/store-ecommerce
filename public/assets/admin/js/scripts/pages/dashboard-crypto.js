@@ -221,6 +221,75 @@
 })(window, document, jQuery);
 
 
+    /********************************************
+    *               Cou Card                    *
+    ********************************************/
+    //Get the context of the Chart canvas element we want to select
+    var couChartjs = document.getElementById("cou-chartjs").getContext("2d");
+    // Create Linear Gradient
+    var blue_trans_gradient = couChartjs.createLinearGradient(0, 0, 0, 100);
+    blue_trans_gradient.addColorStop(0, 'rgba(120, 144, 156,0.4)');
+    blue_trans_gradient.addColorStop(1, 'rgba(255,255,255,0)');
+    // Chart Options
+    var COUStats = {
+        responsive: true,
+        maintainAspectRatio: false,
+        datasetStrokeWidth : 3,
+        pointDotStrokeWidth : 4,
+        tooltipFillColor: "rgba(120, 144, 156,0.8)",
+        legend: {
+            display: false,
+        },
+        hover: {
+            mode: 'label'
+        },
+        scales: {
+            xAxes: [{
+                display: false,
+            }],
+            yAxes: [{
+                display: false,
+                ticks: {
+                    min: 0,
+                    max: 85
+                },
+            }]
+        },
+        title: {
+            display: false,
+            fontColor: "#FFF",
+            fullWidth: false,
+            fontSize: 30,
+            text: '52%'
+        }
+    };
+
+    // Chart Data
+    var COUMonthData = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        datasets: [{
+            label: "COU",
+            data: [40, 30, 60, 40, 45, 30, 60],
+            backgroundColor: blue_trans_gradient,
+            borderColor: "#78909C",
+            borderWidth: 1.5,
+            strokeColor : "#78909C",
+            pointRadius: 0,
+        }]
+    };
+
+    var COUCardconfig = {
+        type: 'line',
+        // Chart Options
+        options : COUStats,
+        // Chart Data
+        data : COUMonthData
+    };
+
+    // Create the chart
+    var COUAreaChart = new Chart(couChartjs, COUCardconfig);
+
+
 $(window).on("load", function(){
 
     // Set paths
@@ -261,7 +330,7 @@ $(window).on("load", function(){
                 // Setup grid
                 grid: {
                     x: 40,
-                    x2: 0,                    
+                    x2: 0,
                     borderColor: '#e3e3e3'
                 },
 
@@ -313,11 +382,11 @@ $(window).on("load", function(){
                         boundaryGap : true,
                         axisLine: {
                             lineStyle: {
-                                color: '#fff'                                
+                                color: '#fff'
                             }
                         },
                         axisTick: {onGap:false},
-                        splitLine: {show:false},                        
+                        splitLine: {show:false},
                         data : [
                             "2017/1/24", "2017/1/25", "2017/1/28", "2017/1/29", "2017/1/30",
                             "2017/1/31", "2017/2/1", "2017/2/4", "2017/2/5", "2017/2/6",
@@ -486,7 +555,7 @@ $(window).on("load", function(){
                             [2190.1,2148.35,2126.22,2190.1]
                         ],
                         markPoint : {
-                            symbol: 'star',                            
+                            symbol: 'star',
                             //symbolSize:20,
                             itemStyle:{
                                 normal:{label:{position:'top'}}
