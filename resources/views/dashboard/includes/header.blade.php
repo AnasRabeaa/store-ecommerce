@@ -10,7 +10,7 @@
                     <a class="navbar-brand" href="index.html">
                         <img class="brand-logo" alt="modern admin logo"
                              src="{{asset('assets/admin/images/logo/logo.png')}}">
-                        <h3 class="brand-text">Touch Wood</h3>
+                        <h3 class="brand-text">{{__('admin/index.Touch Wood')}}</h3>
                     </a>
                 </li>
                 <li class="nav-item d-md-none">
@@ -30,18 +30,17 @@
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                <span class="mr-1">مرجبا
+                <span class="mr-1">{{__('admin/index.Welcome')}}
                   <span
-                      class="user-name text-bold-700">  Anas Rabea</span>
+                      class="user-name text-bold-700"> {{auth('admin') -> user() -> name}} </span>
                 </span>
                             <span class="avatar avatar-online">
-                  <img  style="height: 35px;" src="" alt="avatar"><i></i></span>
+                  <img  style="height: 35px;" src="{{asset('assets/admin/images/logo/logo.png')}}" alt="avatar"><i></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
-                                    class="ft-user"></i> تعديل الملف الشحصي </a>
+                                    class="ft-user"></i>{{__('admin/index.Edit Profile')}}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href=""><i class="ft-power"></i> تسجيل
-                                الخروج </a>
+                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i>{{__('admin/index.Logout')}}</a>
                         </div>
                     </li>
 

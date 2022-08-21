@@ -23,13 +23,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
     ###################################### Admin Guest Routes ######################################
     Route::group(['namespace' => 'Dashboard', 'middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
         Route::get('/','DashboardController@index') -> name('admin.dashboard');  // first admin page admin visits if authenticated
+        ######################################  Logout Route   ######################################
+        Route::get('logout', 'LoginController@logoutAdmin')->name('admin.logout');
+        ######################################  Logout Route   ######################################
         Route::group(['prefix' => 'settings'],function () {
             Route::get('shipping-methods/{type}','SettingsController@editShippingMethods') -> name('edit.shippings.methods');
             Route::put('shipping-methods/{id}','SettingsController@updateShippingMethods') -> name('update.shippings.methods');
         });
     });
     Route::group(['namespace' => 'Dashboard', 'middleware' => 'guest:admin', 'prefix' => 'admin'], function () {
+        //View Admin Login Form
         Route::get('login', 'LoginController@login') -> name('admin.login');
+        // Authenticate Admin If Exists In DB
         Route::post('login', 'LoginController@postLogin') -> name('admin.post.login');
     });
 });
