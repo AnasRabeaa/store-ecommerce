@@ -1,5 +1,6 @@
 <?php
 return [
+    'Name' => 'الاسم',
     'Total Sales' => 'أجمالي المبيعات',
     'Total Orders' => 'أجمالي الطلبات',
     'Orders Quantity' => 'كمية الطلبات',

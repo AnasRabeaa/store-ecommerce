@@ -28,10 +28,10 @@ class SettingDatabaseSeeder extends Seeder
             'outer_shipping_cost' => 0,
             'free_shipping_cost' => 0,
             'translatable' => [
-                'store_name' => 'Touch Wood',
-                'local_shipping_label' => 'Local Shipping',
-                'outer_shipping_label' => 'Outer Shipping',
-                'free_shipping_label' => 'Free Shipping',
+                'store_name' => 'تاتش وود',
+                'free_shipping_label' => 'شحن مجاني',
+                'local_shipping_label' => 'شحن داخلي',
+                'outer_shipping_label' => 'شحن خارجي',
             ],
         ]);
     }

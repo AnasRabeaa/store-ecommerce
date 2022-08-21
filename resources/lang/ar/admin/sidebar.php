@@ -7,7 +7,7 @@ return [
     'Add secondary section'   => 'أضافة قسم فرعي جديد',
     'Add store'   => 'أضافة متجر',
     'Free Shipping'   => 'شحن مجاني',
-    'Local Shipping'   => 'شحن دتخلي',
+    'Local Shipping'   => 'شحن داخلي',
     'Outer Shipping'   => 'شحن خارجي',
     'Shipping Methods'   => 'وسائل الشحن',
     'Stores'   => 'المتاجر',
