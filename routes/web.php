@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    return view('layouts.admin');
+// Route::get('/test', function () {
+//     return view('layouts.admin');
+// });
+
+Route::get('/', function () {
+    return view('/welcome');
+});
+
+
+Route::get('test', function () {
+    return \App\Models\Setting::find(21);
 });

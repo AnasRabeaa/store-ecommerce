@@ -69,8 +69,8 @@ return [
     'Add Product' => 'اضافة المنتج',
     'Products' => 'المنتجات',
     'Touch Wood' => 'تاتش وود',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
+    'Categories' => 'الأقسام',
+    'Show All' => 'عرض الكل',
+    'Admin Photo' => 'صورة الأدمن',
+    'Edit Admin Profile' => 'تعديل الملف الشخصي',
 ];

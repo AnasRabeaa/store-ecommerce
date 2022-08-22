@@ -7,7 +7,7 @@
                         class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i
                             class="ft-menu font-large-1"></i></a></li>
                 <li class="nav-item">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{route('dashboard')}}">
                         <img class="brand-logo" alt="modern admin logo"
                              src="{{asset('assets/admin/images/logo/logo.png')}}">
                         <h3 class="brand-text">{{__('admin/index.Touch Wood')}}</h3>
@@ -28,22 +28,53 @@
                                 class="ficon ft-maximize"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav float-right">
+                    {{--Start Admin Dropdown--}}
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                 <span class="mr-1">{{__('admin/index.Welcome')}}
-                  <span
-                      class="user-name text-bold-700"> {{auth('admin') -> user() -> name}} </span>
+                    {{--Admin Name--}}
+                  <span class="user-name text-bold-700"> {{auth()->guard('admin')->user()->name }}</span>
                 </span>
+                            {{--Admin Personal Photo --}}
                             <span class="avatar avatar-online">
-                  <img  style="height: 35px;" src="{{asset('assets/admin/images/logo/logo.png')}}" alt="avatar"><i></i></span>
+                                <img style="height: 35px;" src="{{asset('assets/images/admins/'.getAdminImage())}}"
+                                     alt="avatar"><i></i>
+                            </span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
-                                    class="ft-user"></i>{{__('admin/index.Edit Profile')}}</a>
+                        {{--Admin Logout And Edit Personal Profile Settings--}}
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"
+                                                                          href="{{route('admin-profile')}}"><i
+                                    class="ft-user"></i> {{__('admin/index.Edit Profile')}} </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i>{{__('admin/index.Logout')}}</a>
+                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i
+                                    class="ft-power"></i> {{__('admin/index.Logout')}}</a>
                         </div>
                     </li>
-
+                    {{--End Admin Deropdown--}}
+                    {{--Start Dropdown Languaes--}}
+                    <li class="dropdown dropdown-user nav-item">
+                        <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                            {{--Start Current Langue--}}
+                            <span class="mr-1">
+                                <span
+                                    class="user-name text-bold-700"> {{ LaravelLocalization::getCurrentLocaleNative() }}</span>
+                            </span>
+                            {{--End Current Langue--}}
+                        </a>
+                        {{--Start Show All Languages--}}
+                        <div class="dropdown-menu dropdown-menu-right">
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                {{--Show All Languages--}}
+                                <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}"
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    {{ $properties['native'] }}
+                                </a>
+                                {{--<div class="dropdown-divider"></div>--}}
+                            @endforeach
+                        </div>
+                        {{--End Show All Languages--}}
+                    </li>
+                    {{--End Dropdown Languages--}}
                     <li class="dropdown dropdown-notification nav-item">
                         <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
                             <span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">5</span>
