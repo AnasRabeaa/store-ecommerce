@@ -26,10 +26,35 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         ######################################  Logout Route   ######################################
         Route::get('logout', 'LoginController@logoutAdmin')->name('admin.logout');
         ######################################  Logout Route   ######################################
+        ######################################  Shipping Routes   ######################################
         Route::group(['prefix' => 'settings'],function () {
             Route::get('shipping-methods/{type}','SettingsController@editShippingMethods') -> name('edit.shippings.methods');
             Route::put('shipping-methods/{id}','SettingsController@updateShippingMethods') -> name('update.shippings.methods');
         });
+        ######################################  Shipping Routes   ######################################
+            ######################################  Categories Routes   ######################################
+            Route::group(['prefix' => 'categories'] , function() {
+                //View All Categories Route
+                Route::get('categories/{type?}','CategoriesController@index') -> name('view-categories');
+                //View Add New Main Category Form
+                Route::get('add-category/{type?}','CategoriesController@addCategory')->name('add-category');
+                //Store In Database New Main Category
+                Route::post('store-category/{type}','CategoriesController@storeMainCategory')->name('store-category');
+                //View Category To Update From
+                Route::get('edit-category/{id}','CategoriesController@editCategory')->name('view-update-category');
+                //Update Category Function
+                Route::put('update-category/{id}','CategoriesController@updateCategory')->name('update-category');
+                //Delete Category Function
+                Route::get('delete-category/{id}','CategoriesController@deleteCategory')->name('delete-category');
+
+            });
+            ######################################  Categories Routes   ######################################
+        ######################################  Edit Profile Routes   ######################################
+        Route::Group(['prefix' => 'profile'], function () {
+                Route::get('admin-profile', 'AdminProfileController@adminProfile')->name('admin-profile');
+                Route::put('update-admin-profile/{id}', 'AdminProfileController@updateAdminProfile')->name('update-admin-profile');
+            });
+        ######################################  Edit Profile Routes   ######################################
     });
     Route::group(['namespace' => 'Dashboard', 'middleware' => 'guest:admin', 'prefix' => 'admin'], function () {
         //View Admin Login Form

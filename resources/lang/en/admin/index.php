@@ -68,7 +68,7 @@ return [
     'Add Product' => 'Add Product',
     'Products' => 'Products',
     'Touch Wood' => 'Touch Wood',
-    '' => '',
-    '' => '',
-    '' => '',
+    'Show All' => 'Show All',
+    'Admin Photo' => 'Admin Photo',
+    'Edit Admin Profile' => 'Edit Admin Profile',
 ];
