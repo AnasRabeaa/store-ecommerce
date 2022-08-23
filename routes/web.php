@@ -23,5 +23,5 @@ Route::get('/', function () {
 
 
 Route::get('test', function () {
-    return \App\Models\Setting::find(21);
+    return \App\Models\Category::find(2);
 });

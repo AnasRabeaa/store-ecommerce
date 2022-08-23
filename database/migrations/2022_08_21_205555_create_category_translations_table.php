@@ -18,10 +18,10 @@ class CreateCategoryTranslationsTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->string('locale');
             $table->string('name');
+            $table->timestamps();
 
-            $table->unique(['category_id' , 'locale']);
+            $table->unique(['locale','category_id']);
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            
         });
     }
 

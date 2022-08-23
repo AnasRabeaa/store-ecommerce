@@ -22,7 +22,7 @@ class CategoriesController extends Controller
         if (in_array($type, ['main-category', 'sub-category'])) {
             if ($type == 'main-category') {
                 $categories = Category::where('category_id',null)->get();
-                return view('dashboard.categories.index', compact('categories'));
+                return view('dashboard.categories.index', compact('categories'), compact('type'));
             } else {
                 $categories = Category::where('category_id', '!=', Null)->get();
                 return view('dashboard.categories.index', compact('categories'), compact('type'));
@@ -44,6 +44,7 @@ class CategoriesController extends Controller
             return redirect()->back()->with(['errors' => 'Visit Categories From The Sidebar']);
         }
     }
+
 
     //Store In Database New Main Category
     public function storeMainCategory(MainCategoryRequest $request, $type)
