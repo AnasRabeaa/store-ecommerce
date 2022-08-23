@@ -71,4 +71,12 @@ return [
     'Show All' => 'Show All',
     'Admin Photo' => 'Admin Photo',
     'Edit Admin Profile' => 'Edit Admin Profile',
+    'Active' => 'Active',
+    'Not active' => 'Not active',
+    'Add New Category' => 'Add New Category',
+    'Add Sub Category' => 'Add Sub Category',
+    'Add New Sub Category' => 'Add New Sub Category',
+    'All Sub Categories' => 'All Sub Categories',
+    'Please Select a Main Category' => 'Please Select a Main Category',
+    'Main Category' => 'Main Category',
 ];

@@ -10,7 +10,7 @@ use phpDocumentor\Reflection\Types\Null_;
 class Category extends Model
 {
     use Translatable;
-    //
+    
     protected $table = 'categories';
     protected $fillable = ['category_id', 'slug', 'photo', 'is_active', 'is_translatable', 'created_at', 'updated_at'];
     protected $hidden = ['created_at', 'updated_at'];

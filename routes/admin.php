@@ -16,23 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 // note that the prefix is admin for all file route
 
-###################################### Mcamara Routes     ######################################
+###################################### Start Mcamara Routes     ######################################
 Route::group(['prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function () {
-    ###################################### Admin Guest Routes ######################################
+    ###################################### Start Admin Guest Routes ######################################
     Route::group(['namespace' => 'Dashboard', 'middleware' => 'auth:admin', 'prefix' => 'admin'], function () {
         Route::get('/','DashboardController@index') -> name('admin.dashboard');  // first admin page admin visits if authenticated
-        ######################################  Logout Route   ######################################
+        ###################################### Start Logout Route   ######################################
         Route::get('logout', 'LoginController@logoutAdmin')->name('admin.logout');
-        ######################################  Logout Route   ######################################
+        ###################################### End Logout Route   ######################################
         ######################################  Shipping Routes   ######################################
         Route::group(['prefix' => 'settings'],function () {
             Route::get('shipping-methods/{type}','SettingsController@editShippingMethods') -> name('edit.shippings.methods');
             Route::put('shipping-methods/{id}','SettingsController@updateShippingMethods') -> name('update.shippings.methods');
         });
-        ######################################  Shipping Routes   ######################################
-            ######################################  Categories Routes   ######################################
+        ###################################### End Shipping Routes   ######################################
+            ###################################### Start Categories Routes   ######################################
             Route::group(['prefix' => 'categories'] , function() {
                 //View All Categories Route
                 Route::get('categories/{type?}','CategoriesController@index') -> name('view-categories');
@@ -48,13 +48,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
                 Route::get('delete-category/{id}','CategoriesController@deleteCategory')->name('delete-category');
 
             });
-            ######################################  Categories Routes   ######################################
-        ######################################  Edit Profile Routes   ######################################
+            ###################################### End Categories Routes   ######################################
+        ###################################### Start Edit Profile Routes   ######################################
         Route::Group(['prefix' => 'profile'], function () {
                 Route::get('admin-profile', 'AdminProfileController@adminProfile')->name('admin-profile');
                 Route::put('update-admin-profile/{id}', 'AdminProfileController@updateAdminProfile')->name('update-admin-profile');
             });
-        ######################################  Edit Profile Routes   ######################################
+        ###################################### End Edit Profile Routes   ######################################
     });
     Route::group(['namespace' => 'Dashboard', 'middleware' => 'guest:admin', 'prefix' => 'admin'], function () {
         //View Admin Login Form
