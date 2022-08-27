@@ -17,9 +17,11 @@ function uploadImage($folder, $image)
     $image_name = time() . '.' .$image->extension();
 //    $image->store('/', $folder);
     $image->move('assets/images/'.$folder,$image_name);
-//    $image_name = time() . $image->hashName();
+    // $image_name = time() . $image->hashName();
     return $image_name;
 }
+
+
 
 function handleCreateImage($folder,$request)
 {

@@ -18,7 +18,7 @@
                 <ul class="menu-content">
                     {{--Main Category --}}
                     <li class="active"><a class="menu-item" href="{{route('view-categories','main-category')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Main Categories')}} </a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
                     </li>
                     {{-- Start Add Main Category--}}
                     <li class="active"><a class="menu-item" href="{{route('add-category','main-category')}}"
@@ -36,7 +36,7 @@
                 <ul class="menu-content">
                     {{--Main Category--}}
                     <li class="active"><a class="menu-item" href="{{route('view-categories','sub-category')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Sub Categories')}} </a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
                     </li>
                     {{--Start Add Main Category--}}
                         <li class="active">
@@ -49,6 +49,65 @@
                 </ul>
             </li>
             {{--End Sub Categories--}}
+
+
+            {{--Start Brands--}}
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.Brands')}} </span>
+
+                </a>
+                <ul class="menu-content">
+                    {{--Brands--}}
+                    <li class="active"><a class="menu-item" href="{{route('view-brands')}}"
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
+                    </li>
+                    {{--Start Add Brands--}}
+                        <li class="active">
+                            <a class="menu-item" data-i18n="nav.dash.ecommerce" href="{{route('add-brand')}}">
+                                {{__('admin/sidebar.Add Brands')}}
+                            </a>
+                        </li>
+                    {{--End Add Brands--}}
+
+                </ul>
+            </li>
+            {{--End Brands--}}
+
+
+            {{--Start Product--}}
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/index.Products') }} </span>
+
+                </a>
+                <ul class="menu-content">
+                    {{--Products--}}
+                    <li class="active"><a class="menu-item" href=""
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
+                    </li>
+                    {{--Start Add Products--}}
+                        <li class="active">
+                            <a class="menu-item" data-i18n="nav.dash.ecommerce" href="">
+                                {{__('admin/sidebar.Add Product')}}
+                            </a>
+                        </li>
+                    {{--End Add Products--}}
+
+                </ul>
+            </li>
+            {{--End Products--}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">المتاجر  </span>

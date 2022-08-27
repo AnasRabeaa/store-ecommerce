@@ -79,4 +79,13 @@ return [
     'All Sub Categories' => 'All Sub Categories',
     'Please Select a Main Category' => 'Please Select a Main Category',
     'Main Category' => 'Main Category',
+    'All Brands' => 'All Brands',
+    'Brand' => 'Brand',
+    'Brands' => 'Brands',
+    'Add Brand' =>  'Add Brand',
+    'Brand Data' => 'Brand Data',
+    'Add Brand Image' => 'Add Brand Image',
+    'Add New Brand' => 'Add New Brand',
+    'Brand Add Successfully' => 'Brand Add Successfully',
+    'Brand Image' => 'Brand Image',
 ];
