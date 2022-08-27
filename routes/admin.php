@@ -35,7 +35,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
             ###################################### Start Categories Routes   ######################################
             Route::group(['prefix' => 'categories'] , function() {
                 //View All Categories Route
-                Route::get('categories/{type?}','CategoriesController@index') -> name('view-categories');
+                Route::get('/{type?}','CategoriesController@index') -> name('view-categories');
                 //View Add New Main Category Form
                 Route::get('add-category/{type?}','CategoriesController@addCategory')->name('add-category');
                 //Store In Database New Main Category
@@ -46,9 +46,24 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
                 Route::put('update-category/{id}','CategoriesController@updateCategory')->name('update-category');
                 //Delete Category Function
                 Route::get('delete-category/{id}','CategoriesController@deleteCategory')->name('delete-category');
-
             });
             ###################################### End Categories Routes   ######################################
+            ######################################  Brands Route   ############################################
+            Route::group(['prefix' => 'brands'] , function() {
+                //View All brands Route
+                Route::get('/','BrandsController@index') -> name('view-brands');
+                //View Add New Brand Form
+                Route::get('add-brand/','BrandsController@addBrand')->name('add-brand');
+                //Store In Database New Brand
+                Route::post('store-brand/','BrandsController@storeBrand')->name('store-brand');
+                //View Brand To Update From
+                Route::get('edit-brand/{id}','BrandsController@editBrand')->name('view-update-brand');
+                //Update Brand Function
+                Route::put('update-brand/{id}','BrandsController@updateBrand')->name('update-brand');
+                //Delete Brand Function
+                Route::get('delete-brand/{id}','BrandsController@deleteBrand')->name('delete-brand');
+            });
+            ######################################  Brandss Route   ############################################
         ###################################### Start Edit Profile Routes   ######################################
         Route::Group(['prefix' => 'profile'], function () {
                 Route::get('admin-profile', 'AdminProfileController@adminProfile')->name('admin-profile');

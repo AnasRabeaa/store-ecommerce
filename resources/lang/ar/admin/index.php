@@ -80,4 +80,14 @@ return [
     'Active' => 'مفعل',
     'Not active' => 'غير مفعل',
     'Please Select a Main Category' => 'من فضلك اختر القسم الرئيسي',
+    'All Brands' => 'جميع الماركات النجارية',
+    'Brand' => 'الماركة',
+    'Brand Image' => 'صورة الماركة',
+    'Brands' => 'الماركات النجارية',
+    'Add Brand' => 'اضافة ماركة تجارية',
+    'Brand Data' => 'بيانات الماركة التجارية',
+    'Add Brand Image' => 'اضافة صورة الماركة',
+    'Add New Brand' => 'اضافة ماركة تجارية جديدة',
+    'Brand Add Successfully' => 'تم الاضافة بنجاح',
+
 ];
