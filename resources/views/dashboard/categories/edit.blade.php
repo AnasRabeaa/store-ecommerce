@@ -9,10 +9,16 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">{{__('admin/index.Dashboard')}} </a>
+                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href=""> {{__('admin/index.Main Categories')}}</a>
-                                </li>
+                                @if($type === 'main-category')
+                                <li class="breadcrumb-item active"> {{__('admin/index.Main Categories')}}
+                                    </li>
+                                @endif()
+                                @if($type === 'sub-category')
+                                <li class="breadcrumb-item active"> {{__('admin/index.Sub Categories')}}
+                                    </li>
+                                @endif
                                 <li class="breadcrumb-item active"> {{__('admin/index.Update')}}
                                 </li>
                             </ol>
@@ -28,8 +34,12 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title"
-                                        id="basic-layout-form">{{__('admin/index.Edit Main Category')}} </h4>
+                                    @if($type === 'main-category')
+                                    <h4 class="card-title">{{__('admin/index.Edit Main Categories')}} </h4>
+                                    @endif()
+                                    @if($type === 'sub-category')
+                                    <h4 class="card-title">{{__('admin/index.Edit Sub Categories')}} </h4>
+                                    @endif()
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">

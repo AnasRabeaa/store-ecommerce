@@ -26,7 +26,7 @@ function uploadImage($folder, $image)
 function handleCreateImage($folder,$request)
 {
     if ($request->has('image')) {
-         return $image_name = uploadImage($folder, $request->image);
+        return $image_name = uploadImage($folder, $request->image);
     } else {
         return $image_name = '';
     }

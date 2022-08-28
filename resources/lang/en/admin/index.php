@@ -88,4 +88,8 @@ return [
     'Add New Brand' => 'Add New Brand',
     'Brand Add Successfully' => 'Brand Add Successfully',
     'Brand Image' => 'Brand Image',
+    'Edit Beand' => 'Edit Beand',
+    'Update Brand Image' => 'Update Brand Image',
+    'Brand Name' => 'Brand Name',
+    'Edit Sub Categories' => 'Edit Sub Categories',
 ];

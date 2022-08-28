@@ -55,7 +55,7 @@ return [
     'Add Category Name In Translation Table' => 'اضافة اسم القسم الرئيسي في جدول الترجمة',
     'Add Sub Category Name In Translation Table' => 'اضافة اسم القسم الفرعي في جدول الترجمة',
     'Add Category Image' => 'اضافة صورة القسم',
-    'ADD Translation To This Category (If Needed) ' => 'اضافة ترجمة للقسم (في حالة وجود ترجمة)',
+    'ADD Translation To This Brand (If Needed) ' => 'اضافة ترجمة للماركة (في حالة وجود ترجمة)',
     'ADD Translation To This Category (If Needed)' => 'اضافة ترجمة للقسم (في حالة وجود ترجمة)',
     'No-Translation Till Now' => 'لا توجد ترجمة حتي الان',
     'Sub Categories' => 'الأقسام الفرعية',
@@ -89,5 +89,9 @@ return [
     'Add Brand Image' => 'اضافة صورة الماركة',
     'Add New Brand' => 'اضافة ماركة تجارية جديدة',
     'Brand Add Successfully' => 'تم الاضافة بنجاح',
+    'Edit Beand' => 'تعديل الماركة التجارية',
+    'Update Brand Image' => 'تعديل صورة الماركة التجارية',
+    'Brand Name' => 'اسم الماركة',
+    'Edit Sub Categories' => 'تعديل قسم فرعي',
 
 ];
