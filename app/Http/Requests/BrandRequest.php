@@ -25,7 +25,7 @@ class BrandRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'image' => 'required',
+            'image' => 'required_without:id',
         ];
 
     }

@@ -91,15 +91,20 @@ class CategoriesController extends Controller
     public function editCategory($category_id)
     {
         $category = Category::find($category_id);
+        if($category->category_id!=null){
+            $type = 'sub-category';
+        } else{
+            $type = 'main-category';
+        }
         if (!$category) {
-            return redirect()->back()->with(['error' => 'Category ID Is Not Exists']);
+            return redirect()->back()->with(['type' => $type,'error' => 'Category ID Is Not Exists']);
         }
 
         if (count($category->translations) > 0) {
             $name = $category->translations[0]->name;
-            return view('dashboard.categories.edit', compact('category'), compact('name'));
+            return view('dashboard.categories.edit', compact('category'), compact('name'), compact('type'));
         } else {
-            return view('dashboard.categories.edit', compact('category'));
+            return view('dashboard.categories.edit', compact('category'), compact('type'));
         }
     }
 
