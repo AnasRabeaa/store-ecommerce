@@ -18,7 +18,7 @@
                     <li class="active"><a class="menu-item" href=""
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/index.Add Languages')}}
+                    <li class="active"><a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/index.Add Languages')}}
                         </a>
                     </li>
                 </ul>
@@ -100,11 +100,14 @@
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.tags')}}"
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                                          data-i18n="nav.dash.ecommerce">{{__('admin/index.Show All')}} </a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.tags.create')}}" data-i18n="nav.dash.crypto">أضافة
-                        </a>
-                    </li>
+                    <li class="active">
+                            <a class="menu-item" data-i18n="nav.dash.ecommerce" href="{{route('admin.tags.create')}}">
+                                {{__('admin/sidebar.Add Tags')}}
+                            </a>
+                        </li>
+
                 </ul>
             </li>
             {{--End Tags--}}

@@ -22,7 +22,7 @@ return [
     'Tags'      =>  'Tags',
     'Tag Name'      =>  'Tag Name',
     'Languages'      =>  'Languages',
-    ''      =>  '',
+    'Add Tags'      =>  'Add Tags',
     ''      =>  '',
     ''      =>  '',
     ''      =>  '',
