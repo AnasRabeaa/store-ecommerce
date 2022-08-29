@@ -37,21 +37,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ###################################### Start Categories Routes   ######################################
-        Route::group(['prefix' => 'categories'] , function() {
-            //View All Categories Route
-            Route::get('/{type?}','CategoriesController@index') -> name('view-categories');
-            //View Add New Main Category Form
-            Route::get('add-category/{type?}','CategoriesController@addCategory')->name('add-category');
-            //Store In Database New Main Category
-            Route::post('store-category/{type}','CategoriesController@storeMainCategory')->name('store-category');
-            //View Category To Update From
-            Route::get('edit-category/{id}','CategoriesController@editCategory')->name('view-update-category');
-            //Update Category Function
-            Route::put('update-category/{id}','CategoriesController@updateCategory')->name('update-category');
-            //Delete Category Function
-            Route::get('delete-category/{id}','CategoriesController@deleteCategory')->name('delete-category');
+        Route::group(['prefix' => 'main_categories'], function () {
+            Route::get('/', 'MainCategoriesController@index')->name('admin.maincategories');
+            Route::get('create', 'MainCategoriesController@create')->name('admin.maincategories.create');
+            Route::post('store', 'MainCategoriesController@store')->name('admin.maincategories.store');
+            Route::get('edit/{id}', 'MainCategoriesController@edit')->name('admin.maincategories.edit');
+            Route::post('update/{id}', 'MainCategoriesController@update')->name('admin.maincategories.update');
+            Route::get('delete/{id}', 'MainCategoriesController@destroy')->name('admin.maincategories.delete');
         });
         ###################################### End Categories Routes   ######################################
+
         ######################################  Start Brands Route   ########################################
         Route::group(['prefix' => 'brands'] , function() {
             //View All brands Route

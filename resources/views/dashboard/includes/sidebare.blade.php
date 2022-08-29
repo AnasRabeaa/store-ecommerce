@@ -34,39 +34,18 @@
 
                 <ul class="menu-content">
                     {{--Main Category --}}
-                    <li class="active"><a class="menu-item" href="{{route('view-categories','main-category')}}"
+                    <li class="active"><a class="menu-item" href="{{route('admin.maincategories')}}"
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
                     </li>
                     {{-- Start Add Main Category--}}
-                    <li class="active"><a class="menu-item" href="{{route('add-category','main-category')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Add Main Category')}} </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.maincategories.create')}}"
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Add Category')}} </a>
                     </li>
                     {{-- End Add Main Category --}}
                 </ul>
             </li>
             {{--End Main Categories--}}
-            {{--Start Sub Categories--}}
-            <li class="nav-item"><a href="{{route('view-categories','sub-categories')}}"><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/index.Sub Categories')}} </span>
-                    <span
-                          class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::count()}}</span>
-                </a>
-                <ul class="menu-content">
-                    {{--Main Category--}}
-                    <li class="active"><a class="menu-item" href="{{route('view-categories','sub-category')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
-                    </li>
-                    {{--Start Add Main Category--}}
-                        <li class="active">
-                            <a class="menu-item" data-i18n="nav.dash.ecommerce" href="{{route('add-category','sub-category')}}">
-                                {{__('admin/index.Add Sub Category')}}
-                            </a>
-                        </li>
-                    {{--End Add Main Category--}}
 
-                </ul>
-            </li>
-            {{--End Sub Categories--}}
 
 
             {{--Start Brands--}}
