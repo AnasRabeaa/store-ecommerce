@@ -93,5 +93,7 @@ return [
     'Update Brand Image' => 'تعديل صورة الماركة التجارية',
     'Brand Name' => 'اسم الماركة',
     'Edit Sub Categories' => 'تعديل قسم فرعي',
+    'Link Name' => 'الاسم بالرابط',
+    'Add Languages' => 'اضافة لغة',
 
 ];

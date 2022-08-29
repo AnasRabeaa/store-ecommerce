@@ -7,12 +7,29 @@
                         class="menu-title"
                         data-i18n="nav.add_on_drag_drop.main">{{__('admin/sidebar.Main')}} </span></a>
             </li>
-
+            {{--Start language--}}
+            <li class="nav-item  open ">
+                <a href=""><i class="la la-home"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.Languages')}} </span>
+                    <span
+                        class="badge badge badge-info badge-pill float-right mr-2"></span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href=""
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
+                    </li>
+                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">{{__('admin/index.Add Languages')}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            {{--End language--}}
             </li>
             {{--Start Main Categories--}}
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/index.Categories')}} </span>
-                    {{--<span class="badge badge badge-danger badge-pill float-right mr-2">400</span>--}}
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::count()}} </span>
                 </a>
 
                 <ul class="menu-content">
@@ -31,7 +48,8 @@
             {{--Start Sub Categories--}}
             <li class="nav-item"><a href="{{route('view-categories','sub-categories')}}"><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/index.Sub Categories')}} </span>
-
+                    <span
+                          class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     {{--Main Category--}}
@@ -54,7 +72,8 @@
             {{--Start Brands--}}
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.Brands')}} </span>
-
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Brand::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     {{--Brands--}}
@@ -73,6 +92,22 @@
             </li>
             {{--End Brands--}}
 
+            {{--Start Tags--}}
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.Tags')}}  </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Tag::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.tags')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.tags.create')}}" data-i18n="nav.dash.crypto">أضافة
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            {{--End Tags--}}
 
             {{--Start Product--}}
             <li class="nav-item"><a href=""><i class="la la-group"></i>
