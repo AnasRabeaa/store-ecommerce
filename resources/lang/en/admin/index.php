@@ -92,4 +92,6 @@ return [
     'Update Brand Image' => 'Update Brand Image',
     'Brand Name' => 'Brand Name',
     'Edit Sub Categories' => 'Edit Sub Categories',
+    'Link Name' => 'Link Name',
+    'Add Languages' => 'Add Languages',
 ];
