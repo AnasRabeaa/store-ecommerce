@@ -9,11 +9,11 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}}</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.tags')}}">  tags </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.tags')}}">  {{__('admin/sidebar.Tags')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active">tag اضافة
+                                <li class="breadcrumb-item active"> {{__('admin/sidebar.Add Tags')}}
                                 </li>
                             </ol>
                         </div>
@@ -54,7 +54,7 @@
                                                  <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم
+                                                            <label for="projectinput1"> {{__('admin/sidebar.Tag Name')}}
                                                                  </label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
@@ -69,7 +69,7 @@
 
                                                      <div class="col-md-6">
                                                          <div class="form-group">
-                                                             <label for="projectinput1"> اسم بالرابط
+                                                             <label for="projectinput1"> {{__('admin/index.Link Name')}}
                                                              </label>
                                                              <input type="text" id="name"
                                                                     class="form-control"
@@ -92,10 +92,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{__('admin/index.Cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> {{__('admin/index.Add')}}
                                                 </button>
                                             </div>
                                         </form>
