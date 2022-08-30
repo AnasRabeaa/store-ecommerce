@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Enumerations\CategoryType;
 use Illuminate\Foundation\Http\FormRequest;
 
 class MainCategoryRequest extends FormRequest
@@ -24,10 +25,9 @@ class MainCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'slug' => 'required | min:4',
-//            'name' => 'required | min:4',
-//            'status' => 'required',
-        ];
-
+                'name' => 'required',
+                'slug' => 'required|unique:categories,slug,'.$this -> id,
+            ];
     }
+
 }

@@ -48,6 +48,10 @@
                                               enctype="multipart/form-data">
                                             @csrf
 
+                                            <div class="form-group">
+                                                <h4 class="form-section"><i class="ft-home"></i>
+                                                    {{__('admin/index.Tag Data')}}
+                                                </h4>
 
                                             <div class="form-body">
 
@@ -69,7 +73,7 @@
 
                                                      <div class="col-md-6">
                                                          <div class="form-group">
-                                                             <label for="projectinput1"> {{__('admin/index.Link Name')}}
+                                                             <label for="projectinput1"> {{__('admin/index.Slug Name')}}
                                                              </label>
                                                              <input type="text" id="name"
                                                                     class="form-control"

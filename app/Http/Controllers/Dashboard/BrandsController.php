@@ -43,7 +43,7 @@ class BrandsController extends Controller
             $brand = Brand::find($brand_id);
 
             if (!$brand) {
-                return redirect()->back()->with(['error' => 'Category ID Is Not Exists']);
+                return redirect()->back()->with(['error' => 'Brand ID Is Not Exists']);
             }
 
             if (count($brand->translations) > 0) {
@@ -54,15 +54,15 @@ class BrandsController extends Controller
             }
         }
 
-    //UPDATE CATEGORY FUNCTION
+    //UPDATE BRABD FUNCTION
     public function updateBrand($id, BrandRequest $request)
     {
         try {
+            DB::beginTransaction();
             $brand = Brand::find($id);
             if(!$brand)
                 return redirect()->back()->with(['error' => 'This brand does not exist']);
 
-            DB::beginTransaction();
             $image_name = handleUpdateImage('brands',$request,$brand);
             $brand->photo = $image_name;
 
