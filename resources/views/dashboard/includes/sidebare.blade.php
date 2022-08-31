@@ -92,18 +92,20 @@
             {{--End Tags--}}
 
             {{--Start Product--}}
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/index.Products') }} </span>
-
+                    <span
+                        class="badge badge badge-success badge-pill float-right mr-2">
+                        {{\App\Models\Product::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     {{--Products--}}
-                    <li class="active"><a class="menu-item" href=""
+                    <li class="active"><a class="menu-item" href="{{route('admin.products')}}"
                                           data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
                     </li>
                     {{--Start Add Products--}}
                         <li class="active">
-                            <a class="menu-item" data-i18n="nav.dash.ecommerce" href="">
+                            <a class="menu-item" data-i18n="nav.dash.ecommerce" href="{{route('admin.products.general.create')}}">
                                 {{__('admin/sidebar.Add Product')}}
                             </a>
                         </li>

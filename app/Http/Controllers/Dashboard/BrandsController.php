@@ -82,7 +82,7 @@ class BrandsController extends Controller
             return $this->errors($this->errors);}
     }
 
-    //Delete Category Function
+    //Delete Beand Function
     public function deletebrand($id)
     {
         $brand = Brand::find($id);
