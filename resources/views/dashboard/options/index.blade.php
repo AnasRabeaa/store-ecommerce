@@ -1,4 +1,3 @@
-
 @extends('layouts.admin')
 @section('content')
 
@@ -6,13 +5,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> {{__('admin/sidebar.Tags')}} </h3>
+                    <h3 class="content-header-title"> الماركات التجارية </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}}</a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a>
                                 </li>
-                                <li class="breadcrumb-item active"> {{__('admin/sidebar.Tags')}}
+                                <li class="breadcrumb-item active">options
                                 </li>
                             </ol>
                         </div>
@@ -26,7 +25,8 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                     <a class="heading-elements-toggle"><i
+                                    <h4 class="card-title">جميع الماركات التجارية </h4>
+                                    <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -44,35 +44,32 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
                                         <table
-                                            class="table display nowrap table-striped table-bordered ">
+                                            class="table display nowrap table-striped table-bordered scroll-horizontal">
                                             <thead class="">
                                             <tr>
-                                                <th> {{__('admin/sidebar.Tag Name')}} </th>
-                                                <th> {{__('admin/index.Slug Name')}} </th>
-                                                <th> {{__('admin/index.Actions')}} </th>
+                                                <th>الاسم</th>
+                                                <th>السعر</th>
+                                                <th>المنتج</th>
+                                                <th>اخصائص</th>
+                                                <th>الإجراءات</th>
                                             </tr>
                                             </thead>
                                             <tbody>
 
-                                            @isset($tags)
-                                                @foreach($tags as $tag)
+                                            @isset($options)
+                                                @foreach($options as $option)
                                                     <tr>
-                                                        <td>{{$tag -> name}}</td>
-                                                         <td>{{$tag ->  slug}}</td>
-                                                         <td>
+                                                        <td>{{$option -> name}}</td>
+                                                        <td>{{$option ->price}}</td>
+                                                        <td>{{$option ->product->name}}</td>
+                                                        <td>{{$option ->attribute->name}}</td>
+                                                        <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.tags.edit',$tag -> id)}}"
-                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/index.Update')}}
-                                                                </a>
-
-
-                                                                <a href="{{route('admin.tags.delete',$tag -> id)}}"
-                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/index.Delete')}}
-                                                                </a>
-
-
-
+                                                                <a href="{{route('admin.options.edit',$option -> id)}}"
+                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
+                                                                <a href="{{route('admin.options.delete',$option -> id)}}"
+                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
                                                             </div>
                                                         </td>
                                                     </tr>
