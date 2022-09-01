@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateAttributeTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('attribute_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('attribute_id');
+            $table->string('locale');
+            $table->string('name');
+            $table->unique(['attribute_id', 'locale']);
         });
     }
 
@@ -28,4 +31,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('attribute_translations');
     }
-};
+}

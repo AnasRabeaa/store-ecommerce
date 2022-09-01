@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttributesTable extends Migration
+class AddPriceColumnToOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateAttributesTable extends Migration
      */
     public function up()
     {
-        Schema::create('attributes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('options', function (Blueprint $table) {
+            $table->string('price')->after('product_id');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateAttributesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attributes');
+        Schema::table('options', function (Blueprint $table) {
+            $table->dropColumn('photo');
+        });
     }
 }

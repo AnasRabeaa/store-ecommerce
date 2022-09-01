@@ -98,6 +98,32 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         ################################## End Products    ###############################################################
 
 
+        ################################## Attrributes Routes ###########################################################
+        Route::group(['prefix' => 'attributes'], function () {
+            Route::get('/', 'AttributesController@index')->name('admin.attributes');
+            Route::get('create', 'AttributesController@create')->name('admin.attributes.create');
+            Route::post('store', 'AttributesController@store')->name('admin.attributes.store');
+            Route::get('delete/{id}', 'AttributesController@destroy')->name('admin.attributes.delete');
+            Route::get('edit/{id}', 'AttributesController@edit')->name('admin.attributes.edit');
+            Route::post('update/{id}', 'AttributesController@update')->name('admin.attributes.update');
+        });
+        ################################## End Attributes    ############################################################
+
+
+        ################################## Attrributes Options ###########################################################
+        Route::group(['prefix' => 'options'], function () {
+            Route::get('/', 'OptionsController@index')->name('admin.options');
+            Route::get('create', 'OptionsController@create')->name('admin.options.create');
+            Route::post('store', 'OptionsController@store')->name('admin.options.store');
+            Route::get('delete/{id}','OptionsController@destroy') -> name('admin.options.delete');
+            Route::get('edit/{id}', 'OptionsController@edit')->name('admin.options.edit');
+            Route::post('update/{id}', 'OptionsController@update')->name('admin.options.update');
+        });
+        ################################## End Options    ############################################################
+
+
+
+
         ###################################### Start Edit Profile Routes   ###############################################
         Route::Group(['prefix' => 'profile'], function () {
                 Route::get('admin-profile', 'AdminProfileController@adminProfile')->name('admin-profile');
