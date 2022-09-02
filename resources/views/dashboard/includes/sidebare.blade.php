@@ -118,16 +118,16 @@
 
 
             <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">خصائص المنتج  </span>
+                    <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin/sidebar.Products Attributes')}} </span>
                     <span
                         class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Attribute::count()}} </span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.attributes')}}"
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.attributes.create')}}" data-i18n="nav.dash.crypto">اضافة
-                            جديدة </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.attributes.create')}}" data-i18n="nav.dash.crypto">
+                            {{__('admin/sidebar.Add Attribute')}}</a>
                     </li>
                 </ul>
             </li>
@@ -137,16 +137,16 @@
 
 
             <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">قيم الخصائص </span>
+                    <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin/sidebar.Attribute Options')}} </span>
                     <span
                         class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Option::count()}} </span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.options')}}"
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                                          data-i18n="nav.dash.ecommerce"> {{__('admin/index.Show All')}} </a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.options.create')}}" data-i18n="nav.dash.crypto">أاضافة
-                            جديدة </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.options.create')}}" data-i18n="nav.dash.crypto">
+                            {{__('admin/sidebar.Add Option')}}</a>
                     </li>
                 </ul>
             </li>
@@ -210,7 +210,7 @@
                         <ul class="menu-content">
                             <li><a class="menu-item" href="{{route('edit.shippings.methods','free')}}"
                                    data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.Free Shipping')}}</a>
-                            <li><a class="menu-item" href="{{route('edit.shippings.methods','local')}}"
+                            <li><a class="menu-item" href="{{route('edit.shippings.methods','inner')}}"
                                    data-i18n="nav.templates.vert.compact_menu">{{__('admin/sidebar.Local Shipping')}}</a>
                             </li>
                             <li><a class="menu-item" href="{{route('edit.shippings.methods','outer')}}"
@@ -219,6 +219,8 @@
                         </ul>
                 </ul>
             </li>
+
+
             <li class=" navigation-header">
                 <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus"
                                                                         data-toggle="tooltip"

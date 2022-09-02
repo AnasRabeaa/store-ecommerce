@@ -9,11 +9,11 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.options')}}"> options </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.options')}}"> {{__('admin/sidebar.Attribute Options')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active"> update options
+                                <li class="breadcrumb-item active"> {{__('admin/index.Update')}} - {{$option -> name}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> add options </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> {{__('admin/index.Edit Attribute Options')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -57,7 +57,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم
+                                                            <label for="projectinput1"> {{__('admin/index.Option Name')}}
                                                             </label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
@@ -72,7 +72,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> ألسعر
+                                                            <label for="projectinput1"> {{__('admin/index.Price')}}
                                                             </label>
                                                             <input type="text" id="price"
                                                                    class="form-control"
@@ -90,10 +90,10 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر ألمنتج
+                                                            <label for="projectinput1"> {{__('admin/index.Choose Product')}}
                                                             </label>
                                                             <select name="product_id" class="select2 form-control" >
-                                                                <optgroup label="من فضلك أختر المنتج ">
+                                                                <optgroup label="{{__('admin/index.Choose Product')}}">
                                                                     @if($products && $products -> count() > 0)
                                                                         @foreach($products as $product)
                                                                             <option
@@ -112,10 +112,10 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر خاصيه
+                                                            <label for="projectinput1"> {{__('admin/index.Choose Attribute')}}
                                                             </label>
                                                             <select name="attribute_id" class="select2 form-control" >
-                                                                <optgroup label="من فضلك أختر قيمه">
+                                                                <optgroup label="{{__('admin/index.Choose Attribute')}}">
                                                                     @if($attributes && $attributes -> count() > 0)
                                                                         @foreach($attributes as $attribute)
                                                                             <option
@@ -140,10 +140,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{__('admin/index.Cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> {{__('admin/index.Update')}}
                                                 </button>
                                             </div>
                                         </form>

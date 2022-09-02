@@ -23,4 +23,8 @@ return [
     'Tag Name'   => 'اسم العلامة',
     'Languages'   => 'لغات الموقع',
     'Add Tags'   => 'اضافة علامة',
+    'Products Attributes' => 'خصائص المنتجات',
+    'Add Attribute' => 'اضافة خصائص',
+    'Add Option' => 'اضافة قيم',
+    'Attribute Options'   => 'خيارات الخصائص'
 ];

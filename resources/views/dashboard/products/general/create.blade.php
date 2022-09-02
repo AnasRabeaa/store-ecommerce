@@ -8,12 +8,12 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="">
-                                        المنتجات </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.products')}}">
+                                        {{__('admin/index.Products')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active"> أضافه منتج
+                                <li class="breadcrumb-item active"> {{__('admin/index.Add Product')}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> أضافة منتج جديد </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> {{__('admin/index.Add Product')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -53,11 +53,11 @@
 
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="ft-home"></i> البيانات الاساسية للمنتج   </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> {{__('admin/index.Product Data')}} </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اسم  المنتج
+                                                            <label for="projectinput1"> {{__('admin/index.Product Name')}}
                                                             </label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
@@ -72,7 +72,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اسم بالرابط
+                                                            <label for="projectinput1"> {{__('admin/index.Slug Name')}}
                                                             </label>
                                                             <input type="text"
                                                                    class="form-control"
@@ -89,7 +89,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> وصف المنتج
+                                                            <label for="projectinput1"> {{__('admin/index.Product Description')}}
                                                             </label>
                                                             <textarea  name="description" id="description"
                                                                    class="form-control"
@@ -104,7 +104,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الوصف المختصر
+                                                            <label for="projectinput1"> {{__('admin/index.Product Short Description')}}
                                                             </label>
                                                             <textarea  name="short_description" id="short-description"
                                                                        class="form-control"
@@ -123,10 +123,10 @@
                                                 <div class="row" >
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر القسم
+                                                            <label for="projectinput1"> {{__('admin/index.Choose Category')}}
                                                             </label>
                                                             <select name="categories[]" class="select2 form-control" multiple>
-                                                                <optgroup label="من فضلك أختر القسم ">
+                                                                <optgroup label=" {{__('admin/index.Choose Category')}} ">
                                                                     @if($categories && $categories -> count() > 0)
                                                                         @foreach($categories as $category)
                                                                             <option
@@ -142,10 +142,10 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر ألعلامات الدلالية
+                                                            <label for="projectinput1"> {{__('admin/index.Choose Tags')}}
                                                             </label>
                                                             <select name="tags[]" class="select2 form-control" multiple>
-                                                                <optgroup label=" اختر ألعلامات الدلالية ">
+                                                                <optgroup label=" {{__('admin/index.Choose Tags')}} ">
                                                                     @if($tags && $tags -> count() > 0)
                                                                         @foreach($tags as $tag)
                                                                             <option
@@ -161,10 +161,10 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر ألماركة
+                                                            <label for="projectinput1"> {{__('admin/index.Choose Brand')}}
                                                             </label>
                                                             <select name="brand_id" class="select2 form-control">
-                                                                <optgroup label="من فضلك أختر الماركة ">
+                                                                <optgroup label=" {{__('admin/index.Choose Brand')}} ">
                                                                     @if($brands && $brands -> count() > 0)
                                                                         @foreach($brands as $brand)
                                                                             <option
@@ -180,37 +180,38 @@
                                                     </div>
                                                 </div>
 
+                                                {{--Start Brand Status --}}
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="form-group mt-1">
-                                                            <input type="checkbox" value="1"
-                                                                   name="is_active"
-                                                                   id="switcheryColor4"
-                                                                   class="switchery" data-color="success"
-                                                                   checked/>
+                                                            <input type="checkbox" value="1" name="is_active"
+                                                                   id="switcheryColor4" class="switchery"
+                                                                   checked data-color="success"/>
                                                             <label for="switcheryColor4"
-                                                                   class="card-title ml-1">الحالة </label>
+                                                                   class="card-title ml-1">{{__('admin/index.Status')}}
+                                                            </label>
 
-                                                            @error("is_active")
-                                                            <span class="text-danger">{{$message }}</span>
+                                                            @error('is_active')
+                                                            <span class="text-danger"> </span>
                                                             @enderror
                                                         </div>
                                                     </div>
-
-
                                                 </div>
+                                                {{--End Brand Status --}}
                                             </div>
+                                            {{--End Brand Data --}}
 
-
+                                            {{-- Start Brand Actions--}}
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{__('admin/index.Cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> {{__('admin/index.Add')}}
                                                 </button>
                                             </div>
+                                            {{--End Brand Actions --}}
                                         </form>
 
                                     </div>

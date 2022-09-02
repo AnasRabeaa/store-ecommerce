@@ -8,12 +8,12 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="">
-                                        المنتجات </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.products')}}">
+                                        {{__('admin/index.Products')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active"> أضافه منتج
+                                <li class="breadcrumb-item active"> {{__('admin/index.Add Product Price')}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> أضافة منتج جديد </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> {{__('admin/index.Add Product Price')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -52,11 +52,11 @@
                                             <input type="hidden" name="product_id" value="{{$id}}">
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="ft-home"></i> البيانات الاساسية للمنتج   </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> {{__('admin/index.Product Data')}} </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> سعر  المنتج
+                                                            <label for="projectinput1"> {{__('admin/index.Product Price')}}
                                                             </label>
                                                             <input type="number" id="price"
                                                                    class="form-control"
@@ -71,7 +71,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> سعر خاص
+                                                            <label for="projectinput1"> {{__('admin/index.Special Price')}}
                                                             </label>
                                                             <input type="number"
                                                                    class="form-control"
@@ -88,12 +88,12 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">نوع السعر
+                                                            <label for="projectinput1"> {{__('admin/index.Product Type')}}
                                                             </label>
                                                             <select name="special_price_type" class="select2 form-control" multiple>
-                                                                <optgroup label="من فضلك أختر النوع ">
-                                                                    <option value="percent">precent</option>
-                                                                    <option value="fixed">fixed</option>
+                                                                <optgroup label="{{__('admin/index.Choose price type')}}">
+                                                                    <option value="percent">{{__('admin/index.percent')}}</option>
+                                                                    <option value="fixed">{{__('admin/index.fixed')}}</option>
                                                                 </optgroup>
                                                             </select>
                                                             @error('special_price_type')
@@ -109,7 +109,7 @@
                                                 <div class="row" >
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> تاريخ البداية
+                                                            <label for="projectinput1"> {{__('admin/index.Start Date')}}
                                                             </label>
 
                                                             <input type="date" id="price"
@@ -126,7 +126,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> تاريخ البداية
+                                                            <label for="projectinput1"> {{__('admin/index.End Date')}}
                                                             </label>
                                                             <input type="date" id="price"
                                                                    class="form-control"
@@ -145,15 +145,17 @@
                                             </div>
 
 
+                                            {{-- Start Brand Actions--}}
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{__('admin/index.Cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> {{__('admin/index.Add')}}
                                                 </button>
                                             </div>
+                                            {{--End Brand Actions --}}
                                         </form>
 
                                     </div>
