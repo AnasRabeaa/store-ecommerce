@@ -8,12 +8,12 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="">
-                                        المنتجات </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.products')}}">
+                                        {{__('admin/index.Products')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active"> أضافه منتج
+                                <li class="breadcrumb-item active"> {{__('admin/index.Add Product Images')}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> أضافة منتج جديد </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> {{__('admin/index.Add Product Images')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -52,27 +52,26 @@
                                             <input type="hidden" name="product_id" value="{{$id}}">
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="ft-home"></i> صور المنتج </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> {{__('admin/index.Product Images')}} </h4>
                                                 <div class="form-group">
                                                     <div id="dpz-multiple-files" class="dropzone dropzone-area">
-                                                        <div class="dz-message">يمكنك رفع اكثر من صوره هنا</div>
+                                                        <div class="dz-message"> {{__('admin/index.You can upload more than one picture here')}} </div>
                                                     </div>
                                                     <br><br>
                                                 </div>
-
-
                                             </div>
 
-
+                                            {{-- Start Brand Actions--}}
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{__('admin/index.Cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> {{__('admin/index.Add')}}
                                                 </button>
                                             </div>
+                                            {{--End Brand Actions --}}
                                         </form>
 
                                     </div>
@@ -101,12 +100,12 @@
                 clickable: true,
                 addRemoveLinks: true,
                 acceptedFiles: 'image/*',
-                dictFallbackMessage: " المتصفح الخاص بكم لا يدعم خاصيه تعدد الصوره والسحب والافلات ",
-                dictInvalidFileType: "لايمكنك رفع هذا النوع من الملفات ",
-                dictCancelUpload: "الغاء الرفع ",
-                dictCancelUploadConfirmation: " هل انت متاكد من الغاء رفع الملفات ؟ ",
-                dictRemoveFile: "حذف الصوره",
-                dictMaxFilesExceeded: "لايمكنك رفع عدد اكثر من هضا ",
+                dictFallbackMessage: "{{__('admin/index.Your browser does not support the multi-image and drag-and-drop feature')}}",
+                dictInvalidFileType: "{{__('admin/index.You cannot upload this type of file')}}",
+                dictCancelUpload: "{{__('admin/index.cancel upload')}}",
+                dictCancelUploadConfirmation: "{{__('admin/index.Are you sure to cancel the upload files?')}}",
+                dictRemoveFile: "{{__('admin/index.Delete picture')}}",
+                dictMaxFilesExceeded: "{{__('admin/index.You cannot upload more photos')}}",
                 headers: {
                     'X-CSRF-TOKEN':
                         "{{ csrf_token() }}"

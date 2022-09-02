@@ -9,11 +9,11 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="">{{__('admin/index.Dashboard')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.brands')}}"> tags </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.tags')}}"> {{__('admin/index.Tags')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active"> تعديل - {{$tag -> name}}
+                                <li class="breadcrumb-item active"> {{__('admin/index.Edit Tag')}} - {{$tag -> name}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> تعديل tags </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> {{__('admin/index.Edit Tag')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -54,11 +54,11 @@
 
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات tags </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> {{__('admin/index.Tag Data')}} </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم
+                                                            <label for="projectinput1"> {{__('admin/index.Tag Name')}}
                                                             </label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
@@ -72,7 +72,7 @@
                                                     </div>
                                                        <div class="col-md-6">
                                                               <div class="form-group">
-                                                                  <label for="projectinput1"> اسم بالرابط
+                                                                  <label for="projectinput1"> {{__('admin/index.Slug Name')}}
                                                                   </label>
                                                                   <input type="text" id="name"
                                                                          class="form-control"
@@ -89,15 +89,17 @@
 
                                             </div>
 
+                                            {{-- Start Brand Actions--}}
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> {{__('admin/index.Cancel')}}
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> {{__('admin/index.Update')}}
                                                 </button>
                                             </div>
+                                            {{--End Brand Actions --}}
                                         </form>
 
                                     </div>
