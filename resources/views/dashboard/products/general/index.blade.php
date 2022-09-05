@@ -11,7 +11,7 @@
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a
-                                        href="">{{__('admin/index.Dashboard')}}</a>
+                                        href="{{route('admin.dashboard')}}">{{__('admin/index.Dashboard')}}</a>
                                 </li>
                                 <li class="breadcrumb-item active"> {{__('admin/index.Products')}}
                                 </li>

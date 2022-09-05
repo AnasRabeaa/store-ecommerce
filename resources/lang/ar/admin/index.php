@@ -148,5 +148,8 @@ return [
     'Unavailable' => 'غير متاح',
     'Quantity' => 'الكمية',
     'Product' => 'المنتج',
-    'Attributes' => 'الخصائص'
+    'Attributes' => 'الخصائص',
+    'Add Sliders' => 'اضافة الاسليدر',
+    'Current Photos' => 'الصور الحاليه',
+    'There are no pictures at the moment' => 'لا يوجد صور حتي اللحظه',
 ];

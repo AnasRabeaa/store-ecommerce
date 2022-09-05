@@ -148,5 +148,8 @@ return [
     'Option Name' => 'Option Name',
     'Product' => 'Product',
     'Attributes' => 'Attributes',
+    'Add Sliders'      =>  'Add Sliders',
+    'Current Photos' => 'Current Photos',
+    'There are no pictures at the moment' => 'There are no pictures at the moment'
 
 ];

@@ -8,7 +8,7 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}} </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
                                 <li class="breadcrumb-item"><a href="{{route('admin.products')}}">
                                         {{__('admin/index.Products')}} </a>
@@ -61,7 +61,7 @@
                                                 </div>
                                             </div>
 
-                                            {{-- Start Brand Actions--}}
+                                            {{-- Start products Actions--}}
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
@@ -71,7 +71,7 @@
                                                     <i class="la la-check-square-o"></i> {{__('admin/index.Add')}}
                                                 </button>
                                             </div>
-                                            {{--End Brand Actions --}}
+                                            {{--End products Actions --}}
                                         </form>
 
                                     </div>
@@ -92,7 +92,7 @@
 
     <script>
 
-             var uploadedDocumentMap = {}
+            var uploadedDocumentMap = {}
             Dropzone.options.dpzMultipleFiles = {
                 paramName: "dzfile", // The name that will be used to transfer the file
                 //autoProcessQueue: false,
@@ -132,7 +132,6 @@
                 ,
                 // previewsContainer: "#dpz-btn-select-files", // Define the container to display the previews
                 init: function () {
-
                         @if(isset($event) && $event->document)
                     var files =
                     {!! json_encode($event->document) !!}
