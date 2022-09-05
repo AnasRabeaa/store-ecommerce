@@ -26,5 +26,8 @@ return [
     'Products Attributes' => 'خصائص المنتجات',
     'Add Attribute' => 'اضافة خصائص',
     'Add Option' => 'اضافة قيم',
-    'Attribute Options'   => 'خيارات الخصائص'
+    'Attribute Options'   => 'خيارات الخصائص',
+    'Main Slider' => 'الاسليدر الرئيسي',
+    'Slider Images' =>'صور الاسليدر',
+    
 ];

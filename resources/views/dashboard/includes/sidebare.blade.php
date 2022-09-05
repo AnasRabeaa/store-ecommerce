@@ -116,7 +116,7 @@
             {{--End Products--}}
 
 
-
+            {{--Start Attributes--}}
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin/sidebar.Products Attributes')}} </span>
                     <span
@@ -131,11 +131,10 @@
                     </li>
                 </ul>
             </li>
+            {{--End Attributes--}}
 
 
-
-
-
+            {{--Start Attribute Options--}}
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{__('admin/sidebar.Attribute Options')}} </span>
                     <span
@@ -150,6 +149,53 @@
                     </li>
                 </ul>
             </li>
+            {{--End Attribute Options--}}
+
+
+            {{--Start Settings--}}
+            <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
+                                                                                    data-i18n="nav.templates.main">{{__('admin/sidebar.Settings')}}</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.Shipping Methods')}}</a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('edit.shippings.methods','free')}}"
+                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.Free Shipping')}}</a>
+                            <li><a class="menu-item" href="{{route('edit.shippings.methods','inner')}}"
+                                   data-i18n="nav.templates.vert.compact_menu">{{__('admin/sidebar.Local Shipping')}}</a>
+                            </li>
+                            <li><a class="menu-item" href="{{route('edit.shippings.methods','outer')}}"
+                                   data-i18n="nav.templates.vert.content_menu">{{__('admin/sidebar.Outer Shipping')}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {{--Start Slider--}}
+                    <li><a class="menu-item" href="#"
+                           data-i18n="nav.templates.vert.main"> {{__('admin/sidebar.Main Slider')}} </a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('admin.sliders.create')}}"
+                                   data-i18n="nav.templates.vert.classic_menu"> {{__('admin/sidebar.Slider Images')}} </a>
+                            </li>
+                        </ul>
+                    </li>
+                    {{--End Slider--}}
+                </ul>
+            </li>
+            {{--End Settings--}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -203,22 +249,6 @@
             </li>
 
 
-            <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
-                                                                                    data-i18n="nav.templates.main">{{__('admin/sidebar.Settings')}}</span></a>
-                <ul class="menu-content">
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.Shipping Methods')}}</a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="{{route('edit.shippings.methods','free')}}"
-                                   data-i18n="nav.templates.vert.classic_menu">{{__('admin/sidebar.Free Shipping')}}</a>
-                            <li><a class="menu-item" href="{{route('edit.shippings.methods','inner')}}"
-                                   data-i18n="nav.templates.vert.compact_menu">{{__('admin/sidebar.Local Shipping')}}</a>
-                            </li>
-                            <li><a class="menu-item" href="{{route('edit.shippings.methods','outer')}}"
-                                   data-i18n="nav.templates.vert.content_menu">{{__('admin/sidebar.Outer Shipping')}}</a>
-                            </li>
-                        </ul>
-                </ul>
-            </li>
 
 
             <li class=" navigation-header">

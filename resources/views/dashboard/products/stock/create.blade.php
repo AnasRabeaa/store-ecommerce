@@ -8,7 +8,7 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('admin/index.Dashboard')}} </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
                                 <li class="breadcrumb-item"><a href="{{route('admin.products')}}">
                                         {{__('admin/index.Products')}} </a>

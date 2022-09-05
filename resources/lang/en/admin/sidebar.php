@@ -27,7 +27,7 @@ return [
     'Attribute Options'      =>  'Attribute Options',
     'Add Attribute'      =>  'Add Attribute',
     'Add Option'      =>  'Add Option',
-    ''      =>  '',
-    ''      =>  '',
-    ''      =>  '',
+    'Main Slider'      =>  'Main Slider',
+    'Slider Images'      =>  'Slider Images',
+    
 ];
