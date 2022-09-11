@@ -2,12 +2,15 @@
 
 return [
     'permissions' => [
-        'products' => 'التحكم بالاعدادات العامة',
-        'tags' => 'التحكم بالعلامات',
-        'categories' => 'التحكم بالاقسام',
-        'brands' => 'التحكم بالماركات',
-        'options' => 'التحكم بخصائص المنتج',
-        'users' => 'التحكم  بمستخدمي اللوحه',
+        'products' => 'General settings control',
+        'tags' => 'Tags Control',
+        'categories' => 'Categories Control',
+        'brands' => 'Brands Control',
+        'attributes' => 'Attributes Control',
+        'options' => 'Options Control',
+        'users' => 'Control Panel Users',
+        'setings' => 'Setings Control',
+        'roles' => 'Roles Control',
     ]
 
 ];

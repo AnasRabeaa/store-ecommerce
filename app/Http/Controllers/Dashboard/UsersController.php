@@ -45,4 +45,24 @@ class UsersController extends Controller {
             return redirect()->route('admin.users.index')->with(['success' => 'حدث خطا ما']);
 
     }
+    
+
+    public function destroy($id)
+    {
+
+        try {
+            //get specific categories and its translations
+            $user = Admin::orderBy('id', 'DESC')->find($id);
+
+            if (!$user)
+                return redirect()->back()->with(['error' => 'هذا القسم غير موجود ']);
+
+            $user->delete();
+
+            return redirect()->back()->with(['success' => 'تم  الحذف بنجاح']);
+
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        }
+    }
 }

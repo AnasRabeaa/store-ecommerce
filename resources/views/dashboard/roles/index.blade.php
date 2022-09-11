@@ -6,13 +6,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title">{{__('admin/sidebar.Control Panel Users')}} </h3>
+                    <h3 class="content-header-title">{{__('admin/sidebar.permissions')}} </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{__('admin/index.Dashboard')}}</a>
                                 </li>
-                                <li class="breadcrumb-item active">{{__('admin/sidebar.Control Panel Users')}}
+                                <li class="breadcrumb-item active">{{__('admin/sidebar.permissions')}}
                                 </li>
                             </ol>
                         </div>
@@ -26,7 +26,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title"> {{__('admin/sidebar.Control Panel Users')}} </h4>
+                                    <h4 class="card-title"> {{__('admin/sidebar.permissions')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -49,25 +49,30 @@
                                             <thead class="">
                                             <tr>
                                                 <th>{{__('admin/index.Name')}}</th>
-                                                <th>{{__('admin/index.Email')}}</th>
-                                                <th>{{__('admin/index.Permission Name')}}</th>
+                                                <th>{{__('admin/sidebar.permissions')}}</th>
                                                 <th>{{__('admin/index.Actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
 
-                                            @isset($users )
-                                                @foreach($users as $user)
+                                            @isset($roles)
+                                                @foreach($roles as $role)
                                                     <tr>
-                                                        <td>{{$user -> name}}</td>
-                                                        <td>{{$user -> email}}</td>
+                                                        <td>{{$role -> name}}</td>
+
                                                         <td>
-                                                            {{$user -> role -> name}}
+                                                            @foreach($role -> permissions as $permission)
+                                                                {{$permission}} ,
+                                                            @endforeach
+
                                                         </td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.users.delete',$user -> id)}}"
+                                                                <a href="{{route('admin.roles.edit',$role -> id)}}"
+                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/index.Update')}} </a>
+
+                                                                <a href="{{route('admin.roles.delete',$role -> id)}}"
                                                                    class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{__('admin/index.Delete')}}
                                                                 </a>
                                                             </div>
