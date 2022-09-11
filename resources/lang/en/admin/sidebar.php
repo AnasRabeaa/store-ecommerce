@@ -29,5 +29,10 @@ return [
     'Add Option'      =>  'Add Option',
     'Main Slider'      =>  'Main Slider',
     'Slider Images'      =>  'Slider Images',
-    
+    'permissions' =>'Permissions',
+    'Add permissions' =>'Add permissions',
+    'Control Panel Users' =>'Control Panel Users',
+    'Add Control Panel Users' =>'Add Control Panel Users',
+    'Add Users' => 'Add User'
+
 ];

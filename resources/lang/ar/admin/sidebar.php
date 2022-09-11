@@ -29,5 +29,11 @@ return [
     'Attribute Options'   => 'خيارات الخصائص',
     'Main Slider' => 'الاسليدر الرئيسي',
     'Slider Images' =>'صور الاسليدر',
-    
+    'permissions' =>'الصلاحيات',
+    'Add permissions' =>' اضافة صلاحيات',
+    'Control Panel Users' =>'مستخدمي لوحة التحكم',
+    'Add Control Panel Users' =>'اضافة مستخدمي لوحة التحكم',
+    'Add Users' => 'اضافة مستخدم'
+
+
 ];

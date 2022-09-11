@@ -25,6 +25,7 @@ class AdminProfileRequest extends FormRequest
     {
         return [
             'name'  => 'required|string',
+            "role_id" => 'required|numeric|exists:roles,id',
             'email'  => 'required|email|unique:admins,email,'.$this->id,
             'currentPassword'  => 'required|min:8',
             'newPassword'  => 'nullable|string|min:8',

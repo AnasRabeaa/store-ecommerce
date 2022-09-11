@@ -150,6 +150,14 @@ return [
     'Attributes' => 'Attributes',
     'Add Sliders'      =>  'Add Sliders',
     'Current Photos' => 'Current Photos',
-    'There are no pictures at the moment' => 'There are no pictures at the moment'
+    'There are no pictures at the moment' => 'There are no pictures at the moment',
+    'Permission Data' => 'Permission Data',
+    'Permission Name' => 'Permission Name',
+    'Email' => 'Email',
+    'Control Panel Users Data' => 'Control Panel Users Data',
+    'User Name' => 'User Name',
+    'Choose Permission' => 'Choose Permission',
+    'Password' => 'Password',
+    'Confirm Password' => 'Confirm Password',
 
 ];

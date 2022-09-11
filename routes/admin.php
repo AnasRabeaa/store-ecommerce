@@ -29,7 +29,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ######################################  Shipping Routes   ###########################################################
-        Route::group(['prefix' => 'settings'],function () {
+        Route::group(['prefix' => 'settings', 'middleware' => 'can:settings'],function () {
             Route::get('shipping-methods/{type}','SettingsController@editShippingMethods') -> name('edit.shippings.methods');
             Route::put('shipping-methods/{id}','SettingsController@updateShippingMethods') -> name('update.shippings.methods');
         });
@@ -45,7 +45,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ###################################### Start Categories Routes   ####################################################
-        Route::group(['prefix' => 'main_categories'], function () {
+        Route::group(['prefix' => 'main_categories', 'middleware' => 'can:categories'], function () {
             Route::get('/', 'MainCategoriesController@index')->name('admin.maincategories');
             Route::get('create', 'MainCategoriesController@create')->name('admin.maincategories.create');
             Route::post('store', 'MainCategoriesController@store')->name('admin.maincategories.store');
@@ -57,7 +57,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ######################################  Start Brands Route   ###################################################
-        Route::group(['prefix' => 'brands'] , function() {
+        Route::group(['prefix' => 'brands', 'middleware' => 'can:brands'] , function() {
             //View All brands Route
             Route::get('/','BrandsController@index') -> name('view-brands');
             //View Add New Brand Form
@@ -75,7 +75,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ###################################### Start Tags Routes #######################################################
-        Route::group(['prefix' => 'tags'], function () {
+        Route::group(['prefix' => 'tags','middleware' => 'can:tags'], function () {
             Route::get('/', 'TagsController@index')->name('admin.tags');
             Route::get('create', 'TagsController@create')->name('admin.tags.create');
             Route::post('store', 'TagsController@store')->name('admin.tags.store');
@@ -87,7 +87,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ################################## Products Routes #############################################################
-        Route::group(['prefix' => 'products'], function () {
+        Route::group(['prefix' => 'products', 'middleware' => 'can:products'], function () {
             Route::get('/', 'ProductsController@index')->name('admin.products');
             Route::get('general-information', 'ProductsController@create')->name('admin.products.general.create');
             Route::post('store-general-information', 'ProductsController@store')->name('admin.products.general.store');
@@ -107,7 +107,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ################################## Attrributes Routes ###########################################################
-        Route::group(['prefix' => 'attributes'], function () {
+        Route::group(['prefix' => 'attributes', 'middleware' => 'can:attributes'], function () {
             Route::get('/', 'AttributesController@index')->name('admin.attributes');
             Route::get('create', 'AttributesController@create')->name('admin.attributes.create');
             Route::post('store', 'AttributesController@store')->name('admin.attributes.store');
@@ -119,7 +119,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
         ################################## Attrributes Options ###########################################################
-        Route::group(['prefix' => 'options'], function () {
+        Route::group(['prefix' => 'options', 'middleware' => 'can:options'], function () {
             Route::get('/', 'OptionsController@index')->name('admin.options');
             Route::get('create', 'OptionsController@create')->name('admin.options.create');
             Route::post('store', 'OptionsController@store')->name('admin.options.store');
@@ -140,10 +140,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         ################################## end sliders    #######################################
 
         ################################## roles ######################################
-        Route::group(['prefix' => 'roles'], function () {
+        Route::group(['prefix' => 'roles', 'middleware' => 'can:roles'], function () {
             Route::get('/', 'RolesController@index')->name('admin.roles.index');
             Route::get('create', 'RolesController@create')->name('admin.roles.create');
             Route::post('store', 'RolesController@saveRole')->name('admin.roles.store');
+            Route::get('delete/{id}','RolesController@destroy') -> name('admin.roles.delete');
             Route::get('/edit/{id}', 'RolesController@edit') ->name('admin.roles.edit') ;
             Route::post('update/{id}', 'RolesController@update')->name('admin.roles.update');
         });
@@ -153,10 +154,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         /**
          * admins Routes
          */
-        Route::group(['prefix' => 'users' , 'middleware' => 'can:users'], function () {
+        Route::group(['prefix' => 'users'], function () {
             Route::get('/', 'UsersController@index')->name('admin.users.index');
             Route::get('/create', 'UsersController@create')->name('admin.users.create');
             Route::post('/store', 'UsersController@store')->name('admin.users.store');
+            Route::get('delete/{id}','UsersController@destroy') -> name('admin.users.delete');
         });
 
     });

@@ -68,4 +68,24 @@ class RolesController extends Controller
     }
 
 
+    public function destroy($id)
+    {
+
+        try {
+            //get specific categories and its translations
+            $role = Role::orderBy('id', 'DESC')->find($id);
+
+            if (!$role)
+                return redirect()->back()->with(['error' => 'هذا القسم غير موجود ']);
+
+            $role->delete();
+
+            return redirect()->back()->with(['success' => 'تم  الحذف بنجاح']);
+
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        }
+    }
+
+
 }
