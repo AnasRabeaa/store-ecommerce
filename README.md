@@ -1,64 +1,92 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Hi, this is a complete multi vendor ecommerce website laravel script. It is a complete multivendor shopping ecommerce solution system for your business. You can use it for : Toys & Kids Shop, Beauty & Health Shop, Watch & Jewelry Shop, Man & Women Fashion Shop, Electronics & Computers Shop, Food & Grocery Shop, Tools & Parts Shop, Home & Furniture Shop, Sports & Outdoors Shop, etc.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+eCommerce platforms are gaining more and more popularity nowadays and we keep maintaining all the demands of our users. The script has unlimited category, brands, products, attribute. coupons, orders, category create options. It comes with 9 payment gateways, full content management system, SEO, order tracking system, and more.
 
-## About Laravel
+USER FEATURES:
+1. 100% responsive design
+2. Login with facebook and google
+3. User registration system with email verification
+4. User Login, forget and reset password option
+5. Profile information, photo, password change option
+6. See orders and details.
+7. Dashboard management
+8. Product review management
+9. Wishlist management
+10. Real time live chat system with sellers
+11. Shipping and billing address management
+12. Social Media share option for blog post and product
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+SELLER FEATURES:
+1. Manage shope profile and user profile
+2. Change password option
+3. Order log
+4. Product management
+5. Product variant management
+6. Product report log
+7. Product review log
+8. Manage withdraw request
+9. Withdraw log
+10. Real time chat system with customers
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+PAYMENT METHODS:
+1. Paypal
+2. Stripe
+3. Cash on delivery
+4. Bank Payment
+5. Razorpay
+6. Flutterwave
+7. Mollie
+8. Paystack
+9. Instamojo
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ADMIN FEATURES:
+1. Category, Sub-Category, Child-Category management
+2. Brand management
+3. Product management
+4. Seller Product management
+5. Product variant management
+6. Campaign product management
+7. Flash deal product management
+8. Product reviews management
+9. Product report management
+10. Country, state and city management
+11. Coupon management
+12. Tax management
+13. Shipping management
+14. Payment method management
+15. Advertisement management
+16. Seller payment withdraw management
+17. Withdraw method management
+18. Customer management
+19. Seller management
+20. Admin management
+21. SEO Settings for all pages
+22. Slider management
+23. Home page management
+24. Home page visibility management
+25. Menu visibility management
+26. Service management
+27. Announcement modal management
+28. SMTP server mail
+29. Email configuration and template setting
+30. Cookie Consent option
+31. Google Recaptcha option
+32. Google Analytic option
+33. Tawk Live Chat option
+34. Login with social media(facebook, gmail)
+35. General Setting management
+36. Manage Theme Color
+37. FAQ create, edit and delete option
+38. About Page management
+39. Terms and Conditions, Privacy Policy Page management
+40. Custom dynamic pages create, edit and delete option
+41. Language change option for front end and back end with RTL Support.
+42. Subscriber manage with email to subscribers option
+43. Profile information, photo, password change option
+Forget and reset password option
+44. Blog Category create, edit and delete option
+45. Blog create, edit and delete option
+46. Manage Blog Comments
+47. Contact message management
+48. And more…
