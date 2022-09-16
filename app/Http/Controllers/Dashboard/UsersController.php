@@ -45,7 +45,7 @@ class UsersController extends Controller {
             return redirect()->route('admin.users.index')->with(['success' => 'حدث خطا ما']);
 
     }
-    
+
 
     public function destroy($id)
     {

@@ -2,7 +2,7 @@
 
 return [
     'permissions' => [
-        'products' => 'General settings control',
+        'products' => 'General products control',
         'tags' => 'Tags Control',
         'categories' => 'Categories Control',
         'brands' => 'Brands Control',

@@ -154,7 +154,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         /**
          * admins Routes
          */
-        Route::group(['prefix' => 'users'], function () {
+        Route::group(['prefix' => 'users', 'middleware' => 'can:users'], function () {
             Route::get('/', 'UsersController@index')->name('admin.users.index');
             Route::get('/create', 'UsersController@create')->name('admin.users.create');
             Route::post('/store', 'UsersController@store')->name('admin.users.store');

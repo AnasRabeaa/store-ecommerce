@@ -66,7 +66,7 @@
                                     <div class="block_content">
                                         <div class="effect">
                                             <a href="#"> <img class="img-fluid"
-                                                              src="assets/images/1.jpg"
+                                                              src="{{$slider -> photo }}"
                                                               alt="banner3-1" title="banner3-1"></a>
 
 
