@@ -12,7 +12,7 @@
                                 <li class="breadcrumb-item"><a
                                         href="{{route('admin.dashboard')}}">{{__('admin/index.Dashboard')}} </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.view-brands')}}">
+                                <li class="breadcrumb-item"><a href="{{route('view-brands')}}">
                                         {{__('admin/index.Brands')}}</a>
                                 </li>
                                 <li class="breadcrumb-item"><a href="#"> {{__('admin/index.Add Brand')}}</a>
